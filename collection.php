@@ -17,6 +17,16 @@ public function search($count,$class1){
     $rows=$stmt->rowCount();
     echo 'Row count= '.$rows;
     echo '<br>';
+
+   $rowtotal=$stmt->fetchALL(PDO::FETCH_ASSOC);
+>     echo "<table border=2>";
+>     $this->displayHeader($class1);
+>     $this->displayTable($rowtotal);
+>     echo "</table>";
+
+
+
+    
     $rowtotal=$stmt->fetchAll();
     $this->displayTable($rowtotal);
   }
